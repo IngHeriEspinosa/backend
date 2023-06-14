@@ -7,6 +7,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const fs = require("fs");
 const https = require("https");
+const { SHA256 } = require("crypto-js");
 require("dotenv").config();
 
 //const userRouter = require('./routers/user');
@@ -15,7 +16,7 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
 
-app.get("/getdatos/:objeto", async function (req, res) {
+app.get("/getdatos/:objeto", function (req, res) {
     try {
         //console.log(JSON.stringify(getData()));
         const NetSuiteOauth = require("netsuite-tba-oauth");
@@ -43,7 +44,7 @@ app.get("/getdatos/:objeto", async function (req, res) {
             account
         );
 
-        return await oauth
+        return oauth
             .get()
             .then((response) => response)
             .then((result) => {
