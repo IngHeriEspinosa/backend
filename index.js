@@ -7,6 +7,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const fs = require("fs");
 const https = require("https");
+require("dotenv").config();
 
 //const userRouter = require('./routers/user');
 
@@ -158,4 +159,4 @@ app.post("/postdatos/:objeto", function (req, res) {
     }
 });
 
-app.listen(port);
+app.listen(process.env.PORT);
