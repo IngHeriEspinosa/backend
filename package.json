@@ -23,7 +23,6 @@
   "author": "",
   "license": "ISC",
     "scripts": {
-        "start": "node index.js",
-        "build": "node build"
+        "start": "nodemon index.js"
     }
 }
