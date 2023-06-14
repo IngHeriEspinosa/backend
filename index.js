@@ -27,7 +27,7 @@ app.get("/getdatos/:objeto", function (req, res) {
         const url = `https://2045380.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=384&deploy=1&recordtype=${object}`;
 
         //const url = 'https://2045380.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=384&deploy=1&recordtype=getNacionalidad';
-        const method = process.env.METHOD;
+        const method = "GET";
         const consumerKey = process.env.CONSUMERKEY;
         const consumerSecret = process.env.CONSUMER_SECRET;
         const tokenId = process.env.TOKEN_ID;
@@ -71,7 +71,7 @@ app.get("/getdatos/:objeto/:id", function (req, res) {
         const url = `https://2045380.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=384&deploy=1&recordtype=${object}&id=${id}`;
 
         //const url = 'https://2045380.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=384&deploy=1&recordtype=getNacionalidad';
-        const method = process.env.METHOD;
+        const method = "GET";
         const consumerKey = process.env.CONSUMERKEY;
         const consumerSecret = process.env.CONSUMER_SECRET;
         const tokenId = process.env.TOKEN_ID;
@@ -115,7 +115,7 @@ app.post("/postdatos/:objeto", function (req, res) {
         const url = `https://2045380.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=384&deploy=1`;
 
         //const url = 'https://2045380.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=384&deploy=1&recordtype=getNacionalidad';
-        const method = process.env.METHOD;
+        const method = "POST";
         const consumerKey = process.env.CONSUMERKEY;
         const consumerSecret = process.env.CONSUMER_SECRET;
         const tokenId = process.env.TOKEN_ID;
