@@ -24,9 +24,8 @@ app.get("/getdatos/:objeto", function (req, res) {
         //const objeto = "getNacionalidad"; //getNacionalidad
         //console.log(req.objeto)
         const object = req.params.objeto;
-        const url = `https://2045380.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=384&deploy=1&recordtype=${object}`;
+        const url = `https://4940254.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=1195&deploy=1&recordtype=${object}`;
 
-        //const url = 'https://2045380.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=384&deploy=1&recordtype=getNacionalidad';
         const method = "GET";
         const consumerKey = process.env.CONSUMERKEY;
         const consumerSecret = process.env.CONSUMER_SECRET;
@@ -68,9 +67,8 @@ app.get("/getdatos/:objeto/:id", function (req, res) {
         const object = req.params.objeto;
         const id = req.params.id;
 
-        const url = `https://2045380.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=384&deploy=1&recordtype=${object}&id=${id}`;
+        const url = `https://4940254.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=1195&deploy=1&recordtype=${object}&id=${id}`;
 
-        //const url = 'https://2045380.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=384&deploy=1&recordtype=getNacionalidad';
         const method = "GET";
         const consumerKey = process.env.CONSUMERKEY;
         const consumerSecret = process.env.CONSUMER_SECRET;
@@ -112,9 +110,8 @@ app.post("/postdatos/:objeto", function (req, res) {
         const object = req.params.objeto;
 
         const datos = JSON.stringify([{ nombre: "Fleirin" }]);
-        const url = `https://2045380.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=384&deploy=1`;
+        const url = `https://4940254.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=1195&deploy=1`;
 
-        //const url = 'https://2045380.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=384&deploy=1&recordtype=getNacionalidad';
         const method = "POST";
         const consumerKey = process.env.CONSUMERKEY;
         const consumerSecret = process.env.CONSUMER_SECRET;
