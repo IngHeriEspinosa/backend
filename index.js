@@ -1,28 +1,31 @@
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
-const request = require("request");
-const OAuth = require("oauth-1.0a");
-const crypto = require("crypto");
+// const request = require("request");
+// const OAuth = require("oauth-1.0a");
+// const crypto = require("crypto");
+const helmet = require('helmet');
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const fs = require("fs");
-const https = require("https");
-const { SHA256 } = require("crypto-js");
-require("dotenv").config();
+const xss = require('xss-clean');
+const hpp = require('hpp');
+const NetSuiteOauth = require("netsuite-tba-oauth");
+// const fs = require("fs");
+// const https = require("https");
+// const { SHA256 } = require("crypto-js");
 
 //const userRouter = require('./routers/user');
 
-app.use(cors());
+app.use(helmet());
 app.use(express.json());
+app.use(cors());
+app.use(xss());
+app.use(hpp());
 app.use(bodyParser.json());
 
 app.get("/getdatos/:objeto", function (req, res) {
     try {
-        //console.log(JSON.stringify(getData()));
-        const NetSuiteOauth = require("netsuite-tba-oauth");
-
-        //const objeto = "getNacionalidad"; //getNacionalidad
-        //console.log(req.objeto)
         const object = req.params.objeto;
         const url = `https://4940254.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=1195&deploy=1&recordtype=${object}`;
 
@@ -59,11 +62,6 @@ app.get("/getdatos/:objeto", function (req, res) {
 
 app.get("/getdatos/:objeto/:id", function (req, res) {
     try {
-        //console.log(JSON.stringify(getData()));
-        const NetSuiteOauth = require("netsuite-tba-oauth");
-
-        //const objeto = "getNacionalidad"; //getNacionalidad
-        //console.log(req.objeto)
         const object = req.params.objeto;
         const id = req.params.id;
 
@@ -102,11 +100,6 @@ app.get("/getdatos/:objeto/:id", function (req, res) {
 
 app.post("/postdatos/:objeto", function (req, res) {
     try {
-        //console.log(JSON.stringify(getData()));
-        const NetSuiteOauth = require("netsuite-tba-oauth");
-
-        //const objeto = "getNacionalidad"; //getNacionalidad
-        //console.log(req.objeto)
         const object = req.params.objeto;
 
         const datos = JSON.stringify([{ nombre: "Fleirin" }]);
