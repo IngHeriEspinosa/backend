@@ -1,21 +1,14 @@
 require("dotenv").config();
 
 const express = require("express");
-const app = express();
-// const request = require("request");
-// const OAuth = require("oauth-1.0a");
-// const crypto = require("crypto");
 const helmet = require('helmet');
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const xss = require('xss-clean');
 const hpp = require('hpp');
 const NetSuiteOauth = require("netsuite-tba-oauth");
-// const fs = require("fs");
-// const https = require("https");
-// const { SHA256 } = require("crypto-js");
 
-//const userRouter = require('./routers/user');
+const app = express();
 
 app.use(helmet());
 app.use(express.json());
