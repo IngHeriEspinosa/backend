@@ -18,7 +18,7 @@
         "xss-clean": "^0.1.4",
         "yarn": "^1.22.19"
     },
-    "name": "api_blog",
+    "name": "backend-solicitud-de-empleo",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -26,6 +26,6 @@
     "author": "",
     "license": "ISC",
     "scripts": {
-        "start:dev": "nodemon index.js"
+        "start:dev": "node index.js"
     }
 }
